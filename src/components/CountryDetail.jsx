@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useCountries } from "../context/CountriesContext.jsx";
 import { formatNumber, findCountryById, formatCurrencies, formatLanguages, formatTld } from "../utils/utils.js";
 import { formatBorders } from "../utils/utils.jsx";
+import { TailSpin } from "react-loader-spinner";
 import StatBox from "./StatBox.jsx";
 import BackButton from "./BackButton.jsx";
 import { useState, useEffect } from "react";
@@ -29,7 +30,13 @@ const CountryDetail = () => {
 	}, [id, countries]);
 	if (!country) {
 		// You can render a loading indicator or handle the case where the data is still being fetched
-		return <div>Loading...</div>;
+		return (
+			<div className="absolute left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]">
+				<div className="flex items-center justify-center">
+					<TailSpin height="80" width="80" color="black" ariaLabel="tail-spin-loading" radius="1" wrapperStyle={{}} wrapperClass="" visible={true} />
+				</div>
+			</div>
+		);
 	}
 
 	const { population, region, capital, subregion, tld, currencies, languages, borders } = country;

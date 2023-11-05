@@ -2,6 +2,8 @@ import { useRef, useState } from "react";
 import CanvasDraw from "react-canvas-draw";
 import { useNavigate } from "react-router-dom";
 import Popup from "reactjs-popup";
+import BackButton from "../components/BackButton";
+
 const contentStyle = {
 	maxWidth: "600px",
 	width: "90%",
@@ -67,7 +69,8 @@ const Draw = () => {
 	};
 
 	return (
-		<>
+		<div className="container m-auto px-6">
+			<BackButton />
 			<div className="draw-wrapper mt-16 max-w-[850px] w-full m-auto px-6">
 				<p className="font-bold  text-center text-3xl mb-10">🎨Draw you own flag🎨</p>
 				<div className="md:flex justify-between">
@@ -123,7 +126,7 @@ const Draw = () => {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 
