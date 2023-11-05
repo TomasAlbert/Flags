@@ -51,7 +51,7 @@ const Draw = () => {
 				});
 
 			handleClear();
-			navigate("/");
+			navigate("/custom-flags");
 			setErr(false);
 		}
 	};
