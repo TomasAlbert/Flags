@@ -69,7 +69,7 @@ const Draw = () => {
 	};
 
 	return (
-		<div className="container m-auto px-6">
+		<div className="container m-auto px-6 mb-14">
 			<BackButton />
 			<div className="draw-wrapper mt-16 max-w-[850px] w-full m-auto px-6">
 				<p className="font-bold  text-center text-3xl mb-10">🎨Draw you own flag🎨</p>
