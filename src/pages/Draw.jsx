@@ -35,7 +35,7 @@ const Draw = () => {
 			console.log(requestBody.author);
 			setErr(true);
 		} else {
-			fetch("http://localhost:3000/", {
+			fetch("https://worrisome-wasp-trousers.cyclic.app/", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json", // Set the content type to JSON

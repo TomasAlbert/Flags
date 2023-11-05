@@ -15,7 +15,7 @@ const Home = () => {
 		const getCustomFlags = async () => {
 			try {
 				setIsLoading(true);
-				const req = await fetch("http://localhost:3000/");
+				const req = await fetch("https://worrisome-wasp-trousers.cyclic.app/");
 				const data = await req.json();
 				setCustomFlags(data);
 			} catch (err) {
