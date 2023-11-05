@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--color-lightBg: hsl(0, 0%, 98%);
+	--color-darkBg: hsl(207, 26%, 17%);
+}
+
+body {
+	font-family: "Nunito Sans", sans-serif;
+}
+html {
+	transition: all 0.3s ease-in-out;
+	background-color: var(--color-lightBg);
+}
+html.dark {
+	background-color: var(--color-darkBg);
+}
+html.dark header,
+html.dark .card,
+html.dark .filter,
+html.dark .filter ul {
+	background-color: hsl(209, 23%, 22%);
+	color: white;
+}
+html.dark .card h2 {
+	color: white;
+}
+html.dark {
+	color: white;
+}
+html.dark h1,
+html.dark .card > div > a > div {
+	color: hsl(0, 0%, 100%);
+}
+html.dark .searchbar > div,
+html.dark .draw-wrapper button {
+	background-color: hsl(209, 23%, 22%);
+}
+html.dark .searchbar input {
+	background: transparent;
+	color: white;
+}
+html.dark .filter button,
+html.dark .draw-wrapper {
+	color: white;
+}
+html.dark .searchbar > div svg,
+html.dark .filter button svg path {
+	fill: white;
+}
+html.dark .country-detail {
+	color: white;
+}
+html.dark .back-button {
+	background-color: hsl(209, 23%, 22%);
+	color: white;
+}
+html.dark .back-button svg {
+	fill: white;
+}
+html.dark .stat-box > div {
+	background-color: hsl(209, 23%, 22%);
+}
+.container {
+	max-width: 1440px;
+}
+.popup-content {
+	color: black;
+}
+.popup-overlay {
+	background-color: rgba(0, 0, 0, 0.616);
+}
+.modal {
+	padding: 30px 20px;
+	background-color: white;
+	position: relative;
+	z-index: 10;
+}
