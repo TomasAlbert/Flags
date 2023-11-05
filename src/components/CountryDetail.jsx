@@ -4,12 +4,34 @@ import { formatNumber, findCountryById, formatCurrencies, formatLanguages, forma
 import { formatBorders } from "../utils/utils.jsx";
 import StatBox from "./StatBox.jsx";
 import BackButton from "./BackButton.jsx";
+import { useState, useEffect } from "react";
 
 const CountryDetail = () => {
 	const countries = useCountries();
 	const { id } = useParams();
+	const [country, setCountry] = useState(null);
+	const fetchCountry = async () => {
+		try {
+			const req = await fetch(`https://restcountries.com/v3.1/name/${id}`);
+			const data = await req.json();
+			setCountry(data[0]);
+		} catch (error) {
+			console.error("Error fetching country data:", error);
+		}
+	};
+	useEffect(() => {
+		console.log(countries);
+		if (countries.length === 0) {
+			fetchCountry();
+		} else {
+			setCountry(findCountryById(countries, id));
+		}
+	}, [id, countries]);
+	if (!country) {
+		// You can render a loading indicator or handle the case where the data is still being fetched
+		return <div>Loading...</div>;
+	}
 
-	const country = findCountryById(countries, id);
 	const { population, region, capital, subregion, tld, currencies, languages, borders } = country;
 
 	return (
